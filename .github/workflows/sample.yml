@@ -18,7 +18,7 @@ jobs:
           
           echo $GITHUB_REF
           
-          if [ $GITHUB_REF == 'refs/heads/master'];then
+          if [ '$GITHUB_REF' == 'refs/heads/master' ];then
           envs='developer'
           else
           envs='homolog'
