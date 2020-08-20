@@ -24,7 +24,7 @@ jobs:
           
           [ "$GITHUB_REF" = "refs/heads/homolog" ] && { ENVS="homolog"; echo $ENVS; }
           
-          "$GITHUB_REF" = "refs/heads/production" || { ENVS="production"; echo $ENVS; }
+          [ "$GITHUB_REF" = "refs/heads/production" ] && { ENVS="production"; echo $ENVS; }
           
           
           
