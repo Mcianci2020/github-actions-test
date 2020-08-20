@@ -12,6 +12,19 @@ jobs:
       - name: multiline script
         run: |
           node -v
-          npm -v 
+          npm -v
+      - name: Branch environment
+        run: |
+          
           echo $GITHUB_REF
+          
+          if [ $GITHUB_REF == 'refs/heads/master'];then
+          envs='developer'
+          else
+          envs='homolog'
+          fi
+          echo $envs
+          
+          
+          
 
