@@ -18,13 +18,13 @@ jobs:
           
           echo $GITHUB_REF
           
-          [ "$GITHUB_REF" = "refs/heads/ci-job" ] && { ENVS="develop"; echo $ENVS; }
+          [ "$GITHUB_REF" = "refs/heads/ci-job" ] && { ENVS="develop"; echo $ENVS; exit 1; }
           
-          [ "$GITHUB_REF" = "refs/heads/master" ] && { ENVS="develop"; echo $ENVS; }
+          [ "$GITHUB_REF" = "refs/heads/master" ] && { ENVS="develop"; echo $ENVS; exit 1;}
           
-          [ "$GITHUB_REF" = "refs/heads/homolog" ] && { ENVS="homolog"; echo $ENVS; }
+          [ "$GITHUB_REF" = "refs/heads/homolog" ] && { ENVS="homolog"; echo $ENVS; exit 1;}
           
-          [ "$GITHUB_REF" = "refs/heads/production" ] && { ENVS="production"; echo $ENVS; }
+          [ "$GITHUB_REF" = "refs/heads/production" ] && { ENVS="production"; echo $ENVS; exit 1;}
           
           
           
