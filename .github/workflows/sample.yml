@@ -18,10 +18,12 @@ jobs:
           
           echo $GITHUB_REF
           
-          if [ "$GITHUB_REF" = "refs/heads/master" ];then
+          if [ "$GITHUB_REF" = "refs/heads/homolog" || "$GITHUB_REF" = "refs/heads/ci-job" ];then
           envs="developer"
-          else
+          elif [ "$GITHUB_REF" = "refs/heads/master" ];then
           envs="homolog"
+          elif [ "$GITHUB_REF" = "refs/heads/production" ];then
+          envs="production"
           fi
           
           echo $envs
