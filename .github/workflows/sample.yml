@@ -13,20 +13,11 @@ jobs:
         run: |
           node -v
           npm -v
-      - name: Branch environment
+      - name: python Command
         run: |
-          
-          echo $GITHUB_REF
-          
-          [ "$GITHUB_REF" = "refs/heads/ci-job" ] && ENVS="develop"
-          [ "$GITHUB_REF" = "refs/heads/master" ] && ENVS="homolog"
-          [ "$GITHUB_REF" = "refs/heads/homolog" ] && ENVS="homolog"
-          [ "$GITHUB_REF" = "refs/heads/production" ] && ENVS="production"
-          
-          echo $ENVS
-          
-          
-          
+          import platform
+          print(platform.processor())
+        shell: python
           
           
 
